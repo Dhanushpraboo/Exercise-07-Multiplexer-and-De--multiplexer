@@ -123,7 +123,7 @@ when I0=0,I1=0,I2=1,I3=0,S1=1,S0=0-
 when I0=0,I1=0,I2=0,I3=1,S1=1,S0=1-
 ![image](https://user-images.githubusercontent.com/94426323/203724835-8b8315f5-355f-45d2-ab68-f5067ffcc1f6.png)
 ## Demultiplexer:
-when I=1,S1=0,S0=0;
+when I=1,S1=0,S0=0-
 ![image](https://user-images.githubusercontent.com/94426323/203724879-ab790060-81f3-4f34-8813-686ad18767f1.png)
 when I=1,S1=0,S0=1;
 ![image](https://user-images.githubusercontent.com/94426323/203724904-c0172f2f-fb92-41fe-9869-9e7b63758cab.png)
