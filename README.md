@@ -47,42 +47,99 @@ If the control input changes to AB = 10, then all the gates are restricted excep
  
  
 ### Procedure
-/* write all the steps invloved */
+
+Step 1:
+Module Declaration. module is a keywords defined in Verilog .
+
+Step 2:
+Input-Output Delecaration.
+
+Multiplexer has four inputs (I0,I1,I2,I3) and two select lines(S0,S1).
+
+Demultiplexer has single input(I) and two select lines(S0,S1).
+
+Step 3:
+In multiplexer ,we use both AND logic and OR logic inorder to obtain the result.
+
+In demultiplexer , only AND gates are being used.
+
+Step 4:
+Ending module. endmodule is a keywords defined in Verilog.
 
 
 
 ### PROGRAM 
+~~~
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: S DHANUSH PRABOO
+RegisterNumber:  212221230019
 */
-
-
-
-
-
+~~~
+## Multiplexer:
+~~~
+module muxf(I0,I1,I2,I3,S0,S1,Y);
+input I0,I1,I2,I3,S0,S1;
+output Y;
+wire P,Q,R,S,S0C,S1C;
+not (S0C,S0);
+not (S1C,S1);
+and (P,S0C,S1C,I0);
+and (Q,S0C,S1,I1);
+and (R,S0,S1C,I2);
+and (S,S0,S1,I3);
+or (Y,P,Q,R,S);
+endmodule 
+~~~
+## Demultiplexer:
+~~~
+module dmuxf(Y0,Y1,Y2,Y3,S0,S1,I);
+input S0,S1,I;
+output Y0,Y1,Y2,Y3;
+wire S0C,S1C;
+not (S0C,S0);
+not (S1C,S1);
+and (Y0,S0C,S1C,I);
+and (Y1,S0C,S1,I);
+and (Y2,S0,S1C,I);
+and (Y3,S0,S1,I);
+endmodule 
+~~~
 
 ### RTL LOGIC  
-
-
-
-
-
-
-
+## MULTIPLEXER:
+![image](https://user-images.githubusercontent.com/94426323/203724327-11d122e8-e816-4acd-b02b-d1971c40b95a.png)
+## DEMULTIPLEXER:
+![image](https://user-images.githubusercontent.com/94426323/203724396-c08aafbf-f797-4982-9d0b-177dbfc471a6.png)
 
 ### TIMING DIGRAMS  
-
-
-
-
+## MULTIPLEXER
+when I0=0,I1=0,I2=0,I3=0,S1=0,S0=0-
+![image](https://user-images.githubusercontent.com/94426323/203724593-a0c33708-5020-4125-977d-d6dd893b6f1d.png)
+when I0=0,I1=1,I2=0,I3=0,S1=0,S0=1-
+![image](https://user-images.githubusercontent.com/94426323/203724759-e9b9c83c-2fc5-40a2-b145-61ab1c6ebaff.png)
+when I0=0,I1=0,I2=1,I3=0,S1=1,S0=0-
+![image](https://user-images.githubusercontent.com/94426323/203724793-63e9be7d-bb13-43a0-a38f-557778865cb1.png)
+when I0=0,I1=0,I2=0,I3=1,S1=1,S0=1-
+![image](https://user-images.githubusercontent.com/94426323/203724835-8b8315f5-355f-45d2-ab68-f5067ffcc1f6.png)
+## Demultiplexer:
+when I=1,S1=0,S0=0;
+![image](https://user-images.githubusercontent.com/94426323/203724879-ab790060-81f3-4f34-8813-686ad18767f1.png)
+when I=1,S1=0,S0=1;
+![image](https://user-images.githubusercontent.com/94426323/203724904-c0172f2f-fb92-41fe-9869-9e7b63758cab.png)
+when I=1,S1=1,S0=0;
+![image](https://user-images.githubusercontent.com/94426323/203724924-04b29977-49b3-4406-ba83-62e79d7f7767.png)
+when I=1,S1=1,S0=1;
+![image](https://user-images.githubusercontent.com/94426323/203724958-a85ad52e-897b-4f12-a66c-0e7e3a3efd4a.png)
+when I0=0,I1=1,I2=0,I3=0,S1=0,S0=1-
+![image](https://user-images.githubusercontent.com/94426323/203724973-b8ee8505-0976-4f5f-8040-71857bab10d2.png)
 
 ### TRUTH TABLE 
-
-
-
-
+#### MULITPLEXER
+![image](https://user-images.githubusercontent.com/94426323/203725029-2b69c590-5530-49d1-b6a5-d2479b3a0706.png)
+#### DEMULTIPLEXER
+![image](https://user-images.githubusercontent.com/94426323/203725067-16f93a44-4f98-46df-be88-4733230974f5.png)
 
 
 ### RESULTS 
+Implementation of 4 X1 multiplexer and 1X4 de multiplexer using verilog Program is done successfully.
